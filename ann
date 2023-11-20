@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def tanh(x):
+    return np.tanh(x)
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+x = np.linspace(-10, 10, 1000)
+
+y_tanh = tanh(x)
+y_sigmoid = sigmoid(x)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.plot(x, y_tanh, label='tanh')
+ax.plot(x, y_sigmoid, label='sigmoid')
+
+ax.set_xlabel('Input')
+ax.set_ylabel('Output')
+ax.set_title('Activation Functions')
+ax.legend()
+
+plt.show()
